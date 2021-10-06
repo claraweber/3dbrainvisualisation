@@ -16,11 +16,11 @@ import numpy as np
 
 #---specify nifti file here---
 #MNI outer surface
-filepath1 = '/Users/claraweber/Desktop/brainrender/mniedges.nii.gz'
+filepath1 = '/mniedges.nii.gz'
 #grey matter, white matter and significant changes
-filepath2 = '/Users/claraweber/Desktop/brainrender/corg_sk_div1000_thr.nii.gz'
+filepath2 = '/thr.nii.gz'
 #JHU atlas
-filepath3 = '/Users/claraweber/Desktop/brainrender/combi2_enh.nii.gz'
+filepath3 = '/enh.nii.gz'
 #Harvard Oxford subcortical atlas
 #filepath4 = '/Users/claraweber/Desktop/hosub.nii.gz'
 #Harvard Oxford cortical atlas
@@ -41,7 +41,7 @@ type(im3)
 im3.shape
 np.unique(im3)
 
-outputgifname = "rotate_significant_4"
+outputgifname = "output"
 
 #once data is loaded as above, addition is possible to display more volumes simultaenously
 #all files have to be in same space (MNI152)
@@ -176,40 +176,6 @@ sig3 = Volume(im3, c='binary', alpha=(0.0, 1), alphaUnit=1, mode=1)
 sig4 = Volume(im4, alpha=(0.0, 1), alphaUnit=1, mode=4)
 
 vol3.show(axes=0, bg='white')
-#show(sig2, axes=1, camera=cam1)
-
-
-#===IsosurfaceBrowser: surface rendering===
-#from vedo.applications import IsosurfaceBrowser
-#import matplotlib.cm as cm
-#plt=IsosurfaceBrowser(vol3, c='grey')
-#plt.show(axes=0, bg2='white')
-#========================================
-
-#===RaycastPlotter: colors and sliders===
-#from vedo.applications import RayCastPlotter
-#plt=RayCastPlotter(vol4)
-#plt = plt.show(axes=0, bg2='white')
-
-#========================================
-
-#===Slicer 2D===
-#from vedo.applications import Slicer2d
-#plt=Slicer2d(sig2, levels=(None, None), size=(900, 900), zoom=1.2)
-#plt.show()
-#========================================
-
-#===Slicer 3D===
-#from vedo.applications import SlicerPlotter
-#plt=SlicerPlotter(sig2)
-#plt.show()
-#========================================
-
-
-#from vedo.io import Video
-#vdo = Video(name='movie.mp4', duration=12, fps=24)
-#vdo = action(elevation_range=(0,80), azimuth_range=(0,359), zoom=None, cam1=None, cam2=None, resetcam=False)
-#vdo.close()
 
 video= Video(outputgifname+'.mp4', duration =13, backend='opencv')
 video.action(elevation_range=(-10,30), azimuth_range=(0,720), zoom=None, cam1=cam1, resetcam=True)
