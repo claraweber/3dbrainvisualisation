@@ -16,11 +16,11 @@ import numpy as np
 
 #---specify nifti file here---
 #MNI outer surface
-filepath1 = '/Users/claraweber/Desktop/brainrender/mniedges.nii.gz'
+filepath1 = '/mniedges.nii.gz'
 #grey matter, white matter and significant changes
-filepath2 = '/Users/claraweber/Desktop/brainrender/corg_sk_div1000_thr.nii.gz'
+filepath2 = '/thr.nii.gz'
 #JHU atlas
-filepath3 = '/Users/claraweber/Desktop/brainrender/combi2_enh.nii.gz'
+filepath3 = '/combi2_enh.nii.gz'
 #Harvard Oxford subcortical atlas
 #filepath4 = '/Users/claraweber/Desktop/hosub.nii.gz'
 #Harvard Oxford cortical atlas
@@ -41,7 +41,7 @@ type(im3)
 im3.shape
 np.unique(im3)
 
-outputgifname = "rotate_significant_4"
+outputgifname = "output"
 
 #once data is loaded as above, addition is possible to display more volumes simultaenously
 #all files have to be in same space (MNI152)
@@ -174,6 +174,8 @@ sig1 = Volume(im1, alpha=(0.0, 1), alphaUnit=1, mode=1)
 sig2 = Volume(im2, c='bwr',alpha=(0.0, 1), alphaUnit=1, mode=1)
 sig3 = Volume(im3, c='binary', alpha=(0.0, 1), alphaUnit=1, mode=1)
 sig4 = Volume(im4, alpha=(0.0, 1), alphaUnit=1, mode=4)
+
+#====change sig3.show to the volume you want to show 
 
 sig3.show(axes=0,camera=cam1, bg='white')
 #show(sig2, axes=1, camera=cam1)
