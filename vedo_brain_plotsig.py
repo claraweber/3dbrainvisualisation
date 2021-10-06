@@ -43,11 +43,12 @@ type(im3)
 im3.shape
 np.unique(im3)
 
-outputgifname = "atyp_ASD_sig_FA"
+outputgifname = "output"
 
 #once data is loaded as above, addition is possible to display more volumes simultaenously
 #all files have to be in same space (MNI152)
 #use multiplication to enhance contrast. Intensity range should not exceed factor 3
+#in case an error occurs in multiplication, coregister niftis first using FSL Flirt
 
 ## this works well for black background
 im4=im1*1.5+im2*8+im3*15
@@ -182,10 +183,7 @@ sig1 = Volume(im1, alpha=(0.0, 1), alphaUnit=1, mode=1)
 sig2 = Volume(im2, c='bwr',alpha=(0.0, 1), alphaUnit=1, mode=1)
 sig3 = Volume(im3, c='bwr', alpha=(0.0, 1), alphaUnit=1, mode=1)
 sig4 = Volume(im4, c='seismic', alpha=(0.0, 1), alphaUnit=1, mode=1)
-sig4.show(axes=0, bg="white",
-          #camera=cam1
-          )
-#show(sig2, axes=1, camera=cam1)
+sig4.show(axes=0, bg="white",camera=cam1)
 
 
 video= Video(outputgifname+'.mp4', duration =13, backend='opencv')
