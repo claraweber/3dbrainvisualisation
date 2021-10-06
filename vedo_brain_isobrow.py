@@ -16,11 +16,11 @@ import numpy as np
 
 #---specify nifti file here---
 #MNI outer surface
-filepath1 = '/Users/claraweber/Desktop/brainrender/mniedges.nii.gz'
+filepath1 = '/mniedges.nii.gz'
 #grey matter, white matter and significant changes
-filepath2 = '/Users/claraweber/Desktop/brainrender/corg_sk_div1000_thr.nii.gz'
+filepath2 = '/thr.nii.gz'
 #JHU atlas
-filepath3 = '/Users/claraweber/Desktop/brainrender/combi2_enh.nii.gz'
+filepath3 = '/nii.gz'
 #Harvard Oxford subcortical atlas
 #filepath4 = '/Users/claraweber/Desktop/hosub.nii.gz'
 #Harvard Oxford cortical atlas
@@ -41,7 +41,7 @@ type(im3)
 im3.shape
 np.unique(im3)
 
-outputgifname = "rotate_significant_4"
+outputgifname = "output"
 
 #once data is loaded as above, addition is possible to display more volumes simultaenously
 #all files have to be in same space (MNI152)
