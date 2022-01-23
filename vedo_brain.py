@@ -6,13 +6,12 @@
 ##https://github.com/marcomusy/vedo/issues/180
 ##jupyter incompatibility: https://githubmemory.com/repo/brainglobe/brainrender/issues/132
 #--------------------------------
-
-
 from vedo import *
 from vedo import Volume
 from vedo import embedWindow, show, colorMap
 import nibabel as nib
 import numpy as np
+import matplotlib
 
 #---specify nifti file here---
 #MNI outer surface
