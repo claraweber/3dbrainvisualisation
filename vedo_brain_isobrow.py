@@ -1,13 +1,3 @@
-#===install packages in python===
-## using pip install in comand line
-## required: vedo, nibabel, numpy, mesh, MoviePy, matplotlib, opencv-python
-#--------------------------------
-#===additional resources===
-##https://github.com/marcomusy/vedo/issues/180
-##jupyter incompatibility: https://githubmemory.com/repo/brainglobe/brainrender/issues/132
-#--------------------------------
-
-
 from vedo import *
 from vedo import Volume
 from vedo import embedWindow, show, colorMap
@@ -27,20 +17,10 @@ filepath3 = '/nii.gz'
 #filepath5 = '/Users/claraweber/Desktop/hocor.nii.gz'
 
 im1 = nib.load(filepath1).get_fdata()
-type(im1)
-im1.shape
-np.unique(im1)
 
 im2 = nib.load(filepath2).get_fdata()
-type(im2)
-im2.shape
-np.unique(im2)
 
 im3 = nib.load(filepath3).get_fdata()
-type(im3)
-im3.shape
-np.unique(im3)
-
 outputgifname = "output"
 
 #once data is loaded as above, addition is possible to display more volumes simultaenously
@@ -59,14 +39,7 @@ cam1=dict(pos=(180, -400, -400),
 
 
 ###===show significant changes, grey and white matter===
-vol1 = Volume(im1, alpha=(0.0, 1), alphaUnit=1, mode=0)
-vol2 = Volume(im2, c='bwr', alpha=(0.0, 0.5), alphaUnit=1, mode=0)
-vol3 = Volume(im3, c='bwr', alpha=(0.0, 1), alphaUnit=5, mode=0)
 vol4 = Volume(im4, alpha=(0.0, 1), alphaUnit=8, mode=4)
-
-sig1 = Volume(im1, alpha=(0.0, 1), alphaUnit=1, mode=1)
-sig2 = Volume(im2, c='bwr',alpha=(0.0, 1), alphaUnit=1, mode=1)
-sig3 = Volume(im3, c='binary', alpha=(0.0, 1), alphaUnit=1, mode=1)
 sig4 = Volume(im4, alpha=(0.0, 1), alphaUnit=1, mode=4)
 
 
