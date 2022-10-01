@@ -21,9 +21,9 @@ filepath2 = '/thr.nii.gz'
 #JHU atlas
 filepath3 = '/combi2_enh.nii.gz'
 #Harvard Oxford subcortical atlas
-#filepath4 = '/Users/claraweber/Desktop/hosub.nii.gz'
+#filepath4 = '/hosub.nii.gz'
 #Harvard Oxford cortical atlas
-#filepath5 = '/Users/claraweber/Desktop/hocor.nii.gz'
+#filepath5 = '/hocor.nii.gz'
 
 im1 = nib.load(filepath1).get_fdata()
 type(im1)
